@@ -72,5 +72,8 @@ CI/CD is managed via the following workflows in `.github/workflows/`:
   --agree-tos \
   --no-eff-email \
   -d yourdomain.com -d www.yourdomain.com
+ ```
+
+  ![reverse_proxy_architecture](./reverse_proxy_with_ssl_and_ec2.png) 
 
   

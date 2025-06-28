@@ -4,7 +4,7 @@ import prisma from "../config/db.js";
 
 export const getBooks = async ({ cursor, limit, search }) => {
     const books = await prisma.book.findMany({
-      take: limit +1, // add 1 extra to check for next page
+      take: limit +1, 
       skip: cursor ? 1 : 0,
       cursor: cursor ? { id: cursor } : undefined,
       orderBy: {

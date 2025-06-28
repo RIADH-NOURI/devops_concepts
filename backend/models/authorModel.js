@@ -2,7 +2,7 @@ import prisma from "../config/db.js";
 
 export const getAuthors = async ({ cursor, limit }) => {
     const authors = await prisma.author.findMany({
-      take: limit + 1, // +1 to check if there's a next page
+      take: limit + 1, 
       skip: cursor ? 1 : 0,
       cursor: cursor ? { id: cursor } : undefined,
       orderBy: {

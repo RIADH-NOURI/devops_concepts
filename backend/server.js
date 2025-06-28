@@ -34,7 +34,6 @@ export const createApp = async () => {
   return app;
 };
 
-// ✅ Only start clustered server if NOT in test mode
 if (process.env.NODE_ENV !== 'test' && cluster.isPrimary) {
   console.log(`Primary process ${process.pid} is running`);
   for (let i = 0; i < numCPUs; i++) cluster.fork();
