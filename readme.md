@@ -55,12 +55,22 @@ CI/CD is managed via the following workflows in `.github/workflows/`:
 
 ## 🚀 Deployment Instructions
 
-1. **Create EC2 instance** (Ubuntu) with Docker and Docker Compose installed
-2. **Clone the repository**
-3. **Add environment variables** and configure `.env` files
+### 1. Create EC2 Instance
+
+Provision an **Ubuntu EC2** instance via AWS with:
+- Docker and Docker Compose installed
+- Open ports **22 (SSH)**, **80 (HTTP)**, and **443 (HTTPS)** in your security group
+
+### 2. Connect via SSH
+
+Use the following command to SSH into your instance:
+
+```bash
+   ssh -i /path/to/your/private-key.pem ubuntu@your-ec2-ip-address
+   ```
 4. **Run Docker Compose** to launch all services:
    ```bash
-   docker-compose up --build -d
+    docker-compose up --build -d
 ## 🔐 after add ssl certificates to your server working on https 
    ```bash
    docker run --rm \
